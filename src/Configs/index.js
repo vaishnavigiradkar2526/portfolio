@@ -5,6 +5,8 @@ class AppStore {
     width = window.innerWidth
     device = 0
     height = window.innerHeight
+    landingLoader = true
+
     isTesting = window.location.href.includes("testing")
     depTesting = new URL(window.location.href).searchParams.get("depTesting") === "yes"
     isAndroid = new URL(window.location.href).searchParams.get("device") === "android"
@@ -14,6 +16,7 @@ class AppStore {
     constructor() {
         makeAutoObservable(this)
     }
+    setLandingLoader = (data) => (this.landingLoader = data)
 
     setAppLoaded = (data) => (this.appLoaded = data)
     setIsToggle = (data) => (this.isToggle = data)

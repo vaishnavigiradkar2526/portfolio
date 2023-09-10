@@ -1,52 +1,62 @@
-import {useLayoutEffect} from 'react';
-import './App.css';
+import { useLayoutEffect } from "react"
+import "./App.css";
+import Header from "./Components/Header/Header"
 import { observer } from "mobx-react"
 import AppStore from "../src/Configs/index"
+import Toggle from "./Components/Toggle/Toggle"
+import Intro from "./Components/Intro/Intro";
 const App = observer(() => {
   useLayoutEffect(() => {
     const handleResize = async (e) => {
-      const width = await window.innerWidth
-      var isLocalHost = window.location.hostname === "localhost"
+      const width = await window.innerWidth;
+      var isLocalHost = window.location.hostname === "localhost";
       // console.info("Host :", window.location.hostname)
-      AppStore.setHeight(window.innerHeight)
-      AppStore.setWidth(window.innerWidth)
+      AppStore.setHeight(window.innerHeight);
+      AppStore.setWidth(window.innerWidth);
       // Firefox 1.0+
       if (width < 1021) {
-        AppStore.setDevice(0)
+        AppStore.setDevice(0);
       } else {
-        AppStore.setDevice(1)
+        AppStore.setDevice(1);
       }
       if (!isLocalHost && !AppStore.depTesting) {
-        console.log = () => {}
-        console.info = () => {}
+        console.log = () => {};
+        console.info = () => {};
       }
-    }
+    };
 
     const scrollPast = async (e) => {
-      var elementTarget = document.getElementsByClassName("GuaranteedIncome_Background")[0]
-      if (window.scrollY > elementTarget.offsetTop + elementTarget.offsetHeight) {
-        AppStore.setFooter(true)
+      var elementTarget = document.getElementsByClassName(
+        "GuaranteedIncome_Background"
+      )[0];
+      if (
+        window.scrollY >
+        elementTarget.offsetTop + elementTarget.offsetHeight
+      ) {
+        AppStore.setFooter(true);
       } else {
-        AppStore.setFooter(false)
+        AppStore.setFooter(false);
       }
-    }
+    };
 
-    handleResize()
-    window.addEventListener("resize", handleResize, { passive: true })
-    window.addEventListener("scroll", scrollPast, { passive: true })
+    handleResize();
+    window.addEventListener("resize", handleResize, { passive: true });
+    window.addEventListener("scroll", scrollPast, { passive: true });
 
     return () => {
-      window.removeEventListener("resize", handleResize)
-      window.removeEventListener("scroll", scrollPast)
-    }
-  }, [])
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", scrollPast);
+    };
+  }, []);
   return (
     <div className="App">
       <div className="App-header">
-       
+        <Header />
+        <Toggle />
+        <Intro />
       </div>
     </div>
   );
-})
+});
 
 export default App;
