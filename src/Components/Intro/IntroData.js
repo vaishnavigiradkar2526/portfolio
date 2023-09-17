@@ -47,7 +47,7 @@ const Data = [
     title: "Intern",
     description: "Zazpi Tech Pvt. Ltd.",
     title2: "Trainer",
-    description2: "Code Insight Academy",
+    description2: "Code Insight Academy", 
     title3: "Frontend Devloper",
     description3: "Depronto Infotech",
     alt: "WORK EXPERIENCE",

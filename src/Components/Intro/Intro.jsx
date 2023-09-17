@@ -35,7 +35,7 @@ const Intro = observer(() => {
           selectedItem={selectedItem}
           infiniteLoop
           emulateTouch={true}
-          autoPlay={true}
+          autoPlay={false}
           showStatus={false}
           showThumbs={false}
           showArrows={false}
@@ -65,6 +65,7 @@ const Intro = observer(() => {
                 className={styles.IntroCarouselContent}
                 dangerouslySetInnerHTML={{ __html: cardinfo.content }}
               ></h3>
+              <div className={styles.IntroContentWrapper}>
               <div
                 className={styles.IntroCarouselTitle}
                 dangerouslySetInnerHTML={{ __html: cardinfo.title }}
@@ -81,6 +82,22 @@ const Intro = observer(() => {
                 className={styles.IntroCarouselDescription}
                 dangerouslySetInnerHTML={{ __html: cardinfo.description2 }}
               ></div>
+              <div
+                className={styles.IntroCarouselTitle}
+                dangerouslySetInnerHTML={{ __html: cardinfo.title4}}
+              ></div>
+              <div
+                className={styles.IntroCarouselDescription}
+                dangerouslySetInnerHTML={{ __html: cardinfo.description4 }}
+              ></div>
+              <div
+                className={styles.IntroCarouselTitle}
+                dangerouslySetInnerHTML={{ __html: cardinfo.title3 }}
+              ></div>
+              <div
+                className={styles.IntroCarouselDescription}
+                dangerouslySetInnerHTML={{ __html: cardinfo.description3 }}
+              ></div></div>
             </div>
           ))}
         </Carousel>

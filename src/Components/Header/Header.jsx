@@ -4,7 +4,8 @@ const Header = () => {
     <>
       <div className={Styles.header}>
         <div className={Styles.header_left}>
-          <img src="" alt="" className={Styles.logo} />
+          <img loading="lazy" src="" alt="" className={Styles.logo} />
+          Vaishnavi Giradkar
         </div>
 
         <div className={Styles.header_right}>

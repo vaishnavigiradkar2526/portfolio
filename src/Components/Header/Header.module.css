@@ -1,10 +1,28 @@
-.header{
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    overflow: hidden;
-    background-color: #f1f1f1;
-    padding: 5px 0px;
-    z-index: 100;
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 5px 0px;
+  /* padding: 5px 10px 5px 30px; */
+  z-index: 100;
+  /* background-color: #fff; */
+  top: 0;
+
+}
+.header_left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Mulish;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+  color: black;
+}
+.header_right{
+
 }
